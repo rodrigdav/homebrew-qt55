@@ -110,7 +110,7 @@ class QtAT55 < Formula
     system "./configure", *args
     system "make"
     ENV.deparallelize
-    system "make", "install"
+    system "make", "-j1 install"
 
     # Some config scripts will only find Qt in a "Frameworks" folder
     frameworks.install_symlink Dir["#{lib}/*.framework"]
